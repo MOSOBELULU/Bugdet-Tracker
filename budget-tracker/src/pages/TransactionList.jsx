@@ -1,7 +1,7 @@
 /*eslint-disable*/
 
 
-export default function TransactionList  ({ transactions }) {
+export default function TransactionList  ({ transactions = [] }) {
     const incomeTransactions = transactions.filter(transaction => transaction.type === 'income');
     const expenseTransactions = transactions.filter(transaction => transaction.type === 'expense');
     

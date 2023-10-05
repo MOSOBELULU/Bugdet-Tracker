@@ -1,19 +1,37 @@
 /*eslint-disable*/
 //Renders a form for users to input income or expense transactions. It should have fields for amount, description, and type (income/expense).
-import { useState } from "react"
+import { useState } from "react";
 
-export default function TransactionForm({addTransaction}) {
-    const [amount, setAmount] = useState('');
-    const [description, setDescription] = useState('');
-    const [type, setType] =useState("income");
+export default function TransactionForm({ addTransaction }) {
+  const [amount, setAmount] = useState('');
+  const [description, setDescription] = useState('');
+  const [type, setType] = useState("income");
+  const [resetForm, setResetForm] = useState(false); // New state for resetting the form
 
-    //function to hanlde submit button
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        addTransaction({amount, description, type});
-        setAmount('');
-        setDescription('')
-    }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Create a new transaction object
+    const newTransaction = {
+      amount: parseFloat(amount),
+      description,
+      type,
+    };
+
+    // Call the addTransaction function to pass the data to the parent component
+    addTransaction(newTransaction);
+
+    // Set resetForm to true to trigger form reset
+    setResetForm(true);
+  }
+
+  // Reset the form fields when resetForm is true
+  if (resetForm) {
+    setAmount('');
+    setDescription('');
+    setResetForm(false); // Reset the resetForm state
+  }
+
 
   return (
     <div >
