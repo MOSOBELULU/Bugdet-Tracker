@@ -1,0 +1,29 @@
+/* .icon{
+    max-width: 20px;
+}
+
+.footer{
+    box-shadow: 2px gray;
+    background-color:#f95c98;
+    height: 100px;
+} */
+
+/* Footer.module.css */
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .icon {
+    width: 30px; 
+    height: 30px;
+    margin: 0 10px; 
+  }
+  
+  .icon:hover {
+    opacity: 0.8; 
+  }
+  

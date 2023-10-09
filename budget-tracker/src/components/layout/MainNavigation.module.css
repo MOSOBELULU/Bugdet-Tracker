@@ -4,11 +4,12 @@
     align-items: center;
     justify-content: space-between;
     background-color: #f95c98;
-    padding: 0 10%;
+    padding: 2% 10%;
   }
 
   .logo {
-    width: 50%;
+    width: 68%;
+
   }
   .header ul {
     list-style: none;

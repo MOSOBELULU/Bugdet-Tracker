@@ -1,5 +1,47 @@
+/* FinancialTips.module.css */
 
-
-.title{
-    color: brown;
-}
+.finTips {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ 
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 35px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .tipContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .tipCard {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 350px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .description {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .image {
+    max-width: 100%;
+    height: auto;
+   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+  }
+  

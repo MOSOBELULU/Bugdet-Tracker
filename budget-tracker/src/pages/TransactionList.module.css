@@ -1,0 +1,38 @@
+/* TransactionList.module.css */
+.headerTitle {
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,600;1,600&display=swap');
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #7f8285
+  }
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .table th, .table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .table tr:hover {
+    background-color: #ddd;
+  }
+  
+  /* Style the totals and balance row */
+  .table tfoot td {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  

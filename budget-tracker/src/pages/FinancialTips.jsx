@@ -1,11 +1,49 @@
-import Firebase from "../components/Firebase/Firebase"
-import classes from './FinancialTips.module.css'
-export default function FinancialTips() {
+import { useEffect, useState } from 'react';
+import classes from './FinancialTips.module.css';
+
+function FinancialTips() {
+  const [data, setData] = useState([]);
+  const databaseURL = 'https://budget-tracker-ba2ae-default-rtdb.firebaseio.com/tips.json';
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(databaseURL);
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const jsonData = await response.json();
+
+        // Convert data object to an array or handle it as needed
+        const dataArray = Object.values(jsonData);
+        setData(dataArray);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (!data) {
+    return <p>Loading...</p>;
+  }
+
   return (
-    <div className={classes.financialTips}>
-      <h1 className={classes.title}>Tips</h1>
-      <Firebase />
+    <div className={classes.finTips}>
+      <h1 className={classes.title}>Smart Money Moves: Your Guide to Financial Well-being</h1>
+      <div className={classes.tipContainer}>
+        {data.map((tipData, index) => (
+          <div key={index} className={classes.tipCard}>
+            <p className={classes.description}>{tipData.description}</p>
+            <img src={tipData.image} alt={`Tip ${index + 1} Image`} className={classes.image} />
+          </div>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
+export default FinancialTips;

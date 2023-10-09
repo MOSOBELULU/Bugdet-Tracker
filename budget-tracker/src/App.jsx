@@ -4,6 +4,7 @@ import TransactionList from './pages/TransactionList'
 import FinancialTips from './pages/FinancialTips'
 import MainNavigation from './components/layout/MainNavigation'
 import { useState } from 'react'
+import Footer from './pages/Footer'
 
 // const transactionData = [
 //   { id: 1, description: 'Income 1', amount: 100, type: 'income' },
@@ -34,6 +35,7 @@ export default function App() {
         <TransactionList transactions={transactions} />
       </Route>
       </Switch>
+      <Footer />
       
     </div>
   )

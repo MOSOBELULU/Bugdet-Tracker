@@ -1,12 +1,34 @@
 /*eslint-disable*/
 //Renders a form for users to input income or expense transactions. It should have fields for amount, description, and type (income/expense).
-import { useState } from "react";
+import { useState, useEffect
+ } from "react";
+import classes from './TransactionForm.module.css'
 
 export default function TransactionForm({ addTransaction }) {
   const [amount, setAmount] = useState('');
   const [description, setDescription] = useState('');
   const [type, setType] = useState("income");
-  const [resetForm, setResetForm] = useState(false); // New state for resetting the form
+  const [resetForm, setResetForm] = useState(false); 
+  const [typedTitle, setTypedTitle] = useState(''); 
+  const originalTitle = "UR FINANCIAL LEDGER"; 
+
+  // A function to simulate the typing effect
+  const typeTitle = (title) => {
+    let index = 0;
+    const titleInterval = setInterval(() => {
+      if (index <= title.length) {
+        setTypedTitle(title.substring(0, index));
+        index++;
+      } else {
+        clearInterval(titleInterval);
+      }
+    }, 100); // Adjust typing speed here
+  };
+
+  useEffect(() => {
+    typeTitle(originalTitle);
+  }, []);
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -35,8 +57,9 @@ export default function TransactionForm({ addTransaction }) {
 
   return (
     <div >
-      <form className="form-container" onSubmit={handleSubmit}>
-        <label> Amount:
+      <h1 className={classes.headerTitle}>{typedTitle}</h1>
+      <form className={classes.formContainer} onSubmit={handleSubmit}>
+        <label className={classes.label}> Amount:
         <input 
         type="number" 
         required 
@@ -46,7 +69,7 @@ export default function TransactionForm({ addTransaction }) {
         <label> Description:
             <input type="text" required value={description} onChange={(event) => setDescription(event.target.value)}></input>
         </label>
-        <label>
+        <label className={classes.label}>
     <input
       type="radio"
       value="income"
@@ -56,7 +79,7 @@ export default function TransactionForm({ addTransaction }) {
     Income
   </label>
 
-  <label>
+  <label className={classes.label}>
     <input
       type="radio"
       value="expense"
@@ -65,7 +88,7 @@ export default function TransactionForm({ addTransaction }) {
     />
     Expense
   </label>
-        <button type="submit">Add Transaction</button>
+        <button type="submit" className={classes.btn}>Add Transaction</button>
       </form>
     </div>
   )

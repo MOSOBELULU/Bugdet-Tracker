@@ -1,9 +1,32 @@
 /*eslint-disable*/
+import classes from './TransactionList.module.css'
+import { useState, useEffect } from 'react';
 
 
-export default function TransactionList  ({ transactions = [] }) {
+export default function TransactionList  ({ 
+  transactions = [] }) {
+    const [typedTitle, setTypedTitle] = useState(''); 
+    const originalTitle = "UR FINANCIAL LEDGER"; 
+
     const incomeTransactions = transactions.filter(transaction => transaction.type === 'income');
     const expenseTransactions = transactions.filter(transaction => transaction.type === 'expense');
+
+    // A function to simulate the typing effect
+  const typeTitle = (title) => {
+    let index = 0;
+    const titleInterval = setInterval(() => {
+      if (index <= title.length) {
+        setTypedTitle(title.substring(0, index));
+        index++;
+      } else {
+        clearInterval(titleInterval);
+      }
+    }, 100); 
+  };
+
+  useEffect(() => {
+    typeTitle(originalTitle);
+  }, []);
     
     const calculateTotal = (type) => {
       return transactions
@@ -20,10 +43,10 @@ export default function TransactionList  ({ transactions = [] }) {
     
     return (
       <div>
-        <h2>Transaction List</h2>
+        <h2 className={classes.headerTitle}>{typedTitle}</h2>
         {transactions.length > 0 ? (
           <div>
-            <table border="2" className="table">
+            <table border="2" className={classes.table}>
               <thead>
                 <tr>
                   <th>Description</th>
