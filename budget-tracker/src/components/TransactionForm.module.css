@@ -1,16 +1,4 @@
 
-
-.headerContainer {
-    text-align: center;
-  }
-  
-  .headerTitle {
-    @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,600;1,600&display=swap');
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #7f8285;
-  } 
-
 .formContainer {
     background-color: #f2f2f2;
     border-radius: 10px;
@@ -28,7 +16,7 @@
   input[type="number"],
   input[type="text"] {
     width: 100%;
-    padding: 8px;
+    padding: 6px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -51,3 +39,24 @@
     background-color: #0056b3;
   }
   
+  /* Media query for iPhone SE and similar small screens */
+@media (max-width: 320px) {
+  .formContainer {
+    padding: 10px;
+}
+
+.label {
+    font-size: 14px; /* Adjust label font size for small screens */
+}
+
+
+  input[type="text"],
+  input[type="number"] {
+      padding: 4px;
+   
+  }
+
+  .btn {
+      padding: 6px 12px;
+  }
+}

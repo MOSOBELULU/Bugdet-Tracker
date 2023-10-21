@@ -37,8 +37,8 @@ function FinancialTips() {
       <div className={classes.tipContainer}>
         {data.map((tipData, index) => (
           <div key={index} className={classes.tipCard}>
-            <p className={classes.description}>{tipData.description}</p>
             <img src={tipData.image} alt={`Tip ${index + 1} Image`} className={classes.image} />
+            <p className={classes.description}>{tipData.description}</p>
           </div>
         ))}
       </div>

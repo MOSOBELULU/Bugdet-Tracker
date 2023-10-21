@@ -14,11 +14,11 @@ export default function MainNavigation() {
                     <Link to='/'>Financial Tips</Link>
                 </li>
                 <li>
-                    <Link to='/transactionList'>Transaction List</Link>
+                    <Link to='/transactions'>Transactions</Link>
                 </li>
-                <li>
+                {/* <li>
                     <Link to='/transactionForm'>Transaction Form</Link>
-                </li>
+                </li> */}
             </ul>
         </nav>
       </header>

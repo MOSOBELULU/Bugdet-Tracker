@@ -5,30 +5,14 @@ import { useState, useEffect
 import classes from './TransactionForm.module.css'
 
 export default function TransactionForm({ addTransaction }) {
+  const [transaction, setTransaction] = useState({ title: '', amount: 0 });
   const [amount, setAmount] = useState('');
   const [description, setDescription] = useState('');
   const [type, setType] = useState("income");
   const [resetForm, setResetForm] = useState(false); 
-  const [typedTitle, setTypedTitle] = useState(''); 
-  const originalTitle = "UR FINANCIAL LEDGER"; 
-
-  // A function to simulate the typing effect
-  const typeTitle = (title) => {
-    let index = 0;
-    const titleInterval = setInterval(() => {
-      if (index <= title.length) {
-        setTypedTitle(title.substring(0, index));
-        index++;
-      } else {
-        clearInterval(titleInterval);
-      }
-    }, 100); // Adjust typing speed here
-  };
-
-  useEffect(() => {
-    typeTitle(originalTitle);
-  }, []);
-
+  
+  const databaseURL = 'https://budget-tracker-ba2ae-default-rtdb.firebaseio.com'; 
+ 
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -57,7 +41,6 @@ export default function TransactionForm({ addTransaction }) {
 
   return (
     <div >
-      <h1 className={classes.headerTitle}>{typedTitle}</h1>
       <form className={classes.formContainer} onSubmit={handleSubmit}>
         <label className={classes.label}> Amount:
         <input 

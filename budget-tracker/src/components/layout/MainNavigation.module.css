@@ -1,16 +1,18 @@
 .header {
     height: 10rem;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     background-color: #f95c98;
-    padding: 2% 10%;
+    padding: 2% 5%;
   }
 
   .logo {
     width: 68%;
-
+   
   }
+
   .header ul {
     list-style: none;
     margin: 0;
@@ -34,3 +36,16 @@
   .header a.active {
     color: white;
   }
+
+  @media (max-width: 320px) {
+    .header {
+        height: 8rem;
+        /* flex-direction: column; */
+        align-items: center;
+    }
+
+
+    .header a {
+        font-size: 1rem; /* Reduce font size for small screens */
+    }
+}

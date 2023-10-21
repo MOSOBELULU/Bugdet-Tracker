@@ -1,10 +1,11 @@
 import {Route, Switch} from 'react-router-dom'
-import TransactionForm from './pages/TransactionForm'
-import TransactionList from './pages/TransactionList'
+// import TransactionForm from './pages/TransactionForm'
+// import TransactionList from './components/TransactionList'
 import FinancialTips from './pages/FinancialTips'
+import Transactions from './pages/Transactions'
 import MainNavigation from './components/layout/MainNavigation'
-import { useState } from 'react'
-import Footer from './pages/Footer'
+import Footer from './components/Footer'
+
 
 // const transactionData = [
 //   { id: 1, description: 'Income 1', amount: 100, type: 'income' },
@@ -14,13 +15,7 @@ import Footer from './pages/Footer'
 
 export default function App() {
 
-  // Create state to store the transactions
-  const [transactions, setTransactions] = useState([]);
-
-  // Function to add a new transaction to the state
-  const addTransaction = (newTransaction) => {
-    setTransactions([...transactions, newTransaction]);
-  }
+  
   return (
     <div>
       <MainNavigation/>
@@ -28,12 +23,15 @@ export default function App() {
       <Route path='/' exact>
         <FinancialTips/>
       </Route>
-      <Route path='/transactionForm'>
+      <Route path='/transactions'>
+        <Transactions />
+      </Route>
+      {/* <Route path='/transactionForm'>
         <TransactionForm addTransaction={addTransaction}/>
       </Route>
       <Route path='/transactionList'>
         <TransactionList transactions={transactions} />
-      </Route>
+      </Route> */}
       </Switch>
       <Footer />
       

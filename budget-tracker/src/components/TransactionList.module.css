@@ -1,15 +1,9 @@
-/* TransactionList.module.css */
-.headerTitle {
-    @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,600;1,600&display=swap');
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #7f8285
-  }
 
 .table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin: 10% auto;
+    padding: 20px;
   }
   
   .table th, .table td {
@@ -36,3 +30,19 @@
     font-weight: bold;
   }
   
+
+  .text{
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Media query for iPhone SE and similar small screens */
+@media (max-width: 320px) {
+  .table {
+      padding: 5px; /* Further reduce padding for small screens */
+  }
+
+  .table th, .table td {
+      padding: 4px; /* Further reduce cell padding for small screens */
+  }
+}
