@@ -42,7 +42,7 @@
   /* Media query for iPhone SE and similar small screens */
 @media (max-width: 320px) {
   .formContainer {
-    padding: 10px;
+    padding: 5px;
 }
 
 .label {
