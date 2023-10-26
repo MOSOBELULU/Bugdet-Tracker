@@ -39,10 +39,10 @@
   /* Media query for iPhone SE and similar small screens */
 @media (max-width: 320px) {
   .table {
-      padding: 5px; /* Further reduce padding for small screens */
+      padding: 5px; 
   }
 
   .table th, .table td {
-      padding: 4px; /* Further reduce cell padding for small screens */
+      padding: 4px; 
   }
 }

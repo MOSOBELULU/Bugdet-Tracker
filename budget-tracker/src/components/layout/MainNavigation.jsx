@@ -5,20 +5,16 @@ export default function MainNavigation() {
   return (
     <div>
       <header className={classes.header}>
-        <div>
+        
+          <Link to='/'>
             <img src='../images/budget-logo.png' alt='logo' className={classes.logo}/>
-        </div>
+            </Link>
+      
         <nav>
             <ul>
                 <li>
-                    <Link to='/'>Financial Tips</Link>
-                </li>
-                <li>
                     <Link to='/transactions'>Transactions</Link>
                 </li>
-                {/* <li>
-                    <Link to='/transactionForm'>Transaction Form</Link>
-                </li> */}
             </ul>
         </nav>
       </header>

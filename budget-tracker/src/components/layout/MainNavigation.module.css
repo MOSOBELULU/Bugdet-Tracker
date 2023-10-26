@@ -9,7 +9,7 @@
   }
 
   .logo {
-    width: 68%;
+    width: 65%;
    
   }
 
@@ -22,13 +22,14 @@
   }
   
   .header li {
-    margin-left: 3rem;
+    margin-right: 3rem;
   }
   
   .header a {
     text-decoration: none;
     font-size: 1.5rem;
-    color: #fcb8d2;
+    color: #0a0a0a;
+    padding-right: 10px;
   }
   
   .header a:hover,
@@ -40,12 +41,11 @@
   @media (max-width: 320px) {
     .header {
         height: 8rem;
-        /* flex-direction: column; */
         align-items: center;
     }
 
 
     .header a {
-        font-size: 1rem; /* Reduce font size for small screens */
+        font-size: 1rem; 
     }
 }
