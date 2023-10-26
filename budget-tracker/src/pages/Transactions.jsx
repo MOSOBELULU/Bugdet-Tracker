@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import classes from './Transactions.module.css' 
+import classes from './transactions.module.css' 
 
 import TransactionList from '../components/TransactionList';
 import TransactionForm from '../components/TransactionForm';
