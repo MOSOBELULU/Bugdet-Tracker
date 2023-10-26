@@ -4,9 +4,6 @@ import Transactions from './pages/Transactions'
 import MainNavigation from './components/layout/MainNavigation'
 import Footer from './components/Footer'
 
-
-
-
 export default function App() {
 
   
