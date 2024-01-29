@@ -3,7 +3,7 @@ import classes from './FinancialTips.module.css';
 
 function FinancialTips() {
   const [data, setData] = useState([]);
-  const databaseURL = 'https://budget-tracker-5be97-default-rtdb.firebaseio.com/';
+  const databaseURL = 'https://budget-tracker-ba2ae-default-rtdb.firebaseio.com/';
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,7 +33,7 @@ function FinancialTips() {
 
   return (
     <div className={classes.finTips}>
-      <h1 className={classes.title}>Smart Money Moves: Your Guide to Financial Well-being..............</h1>
+      <h1 className={classes.title}>Smart Money Moves: Your Guide to Financial Well-being</h1>
       <div className={classes.tipContainer}>
         {data.map((tipData, index) => (
           <div key={index} className={classes.tipCard}>
