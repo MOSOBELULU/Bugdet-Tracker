@@ -33,7 +33,7 @@ function FinancialTips() {
 
   return (
     <div className={classes.finTips}>
-      <h1 className={classes.title}>Smart Money Moves: Your Guide to Financial Well-being</h1>
+      <h1 className={classes.title}>Smart Money Moves: Your Guide to Financial Well-being..............</h1>
       <div className={classes.tipContainer}>
         {data.map((tipData, index) => (
           <div key={index} className={classes.tipCard}>
