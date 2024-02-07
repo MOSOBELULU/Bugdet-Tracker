@@ -42,15 +42,15 @@ export default function TransactionForm({ addTransaction }) {
   return (
     <div >
       <form className={classes.formContainer} onSubmit={handleSubmit}>
+        <label className={classes.label}> Description:
+            <input type="text" required value={description} onChange={(event) => setDescription(event.target.value)}></input>
+        </label>
         <label className={classes.label}> Amount:
         <input 
         type="number" 
         required 
         value={amount} 
         onChange={(event) => setAmount(event.target.value)}></input>
-        </label>
-        <label> Description:
-            <input type="text" required value={description} onChange={(event) => setDescription(event.target.value)}></input>
         </label>
         <label className={classes.label}>
     <input

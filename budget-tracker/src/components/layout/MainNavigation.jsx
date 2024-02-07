@@ -6,17 +6,17 @@ export default function MainNavigation() {
     <div>
       <header className={classes.header}>
         
-          <Link to='/'>
+          <Link to='/transactions'>
             <img src='../images/budget-logo.png' alt='logo' className={classes.logo}/>
             </Link>
       
-        <nav>
+        {/* <nav>
             <ul>
                 <li>
                     <Link to='/transactions'>Transactions</Link>
                 </li>
             </ul>
-        </nav>
+        </nav> */}
       </header>
     </div>
   )
