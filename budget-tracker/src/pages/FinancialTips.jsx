@@ -3,7 +3,7 @@ import classes from './FinancialTips.module.css';
 
 function FinancialTips() {
   const [data, setData] = useState([]);
-  const databaseURL = 'https://budget-tracker-ba2ae-default-rtdb.firebaseio.com/';
+  const databaseURL = 'https://budget-pal-2db6a-default-rtdb.firebaseio.com/';
 
   useEffect(() => {
     const fetchData = async () => {
