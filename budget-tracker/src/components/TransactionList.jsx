@@ -1,4 +1,5 @@
 /*eslint-disable*/
+
 import classes from './TransactionList.module.css';
 
 export default function TransactionList({ transactions = [] }) {
